@@ -1,73 +1,73 @@
-# React + TypeScript + Vite
+# Simple Todo App (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimal, opinionated Todo application built with React, TypeScript, and Vite — intended as a small starter project and learning reference.
 
-Currently, two official plugins are available:
+Features
+- Create, edit, complete, and delete todos
+- Type-safe components and state with TypeScript
+- Fast development experience with Vite (HMR)
+- ESLint configuration for consistent code quality
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tech stack
+- React
+- TypeScript
+- Vite
+- ESLint (configurable)
 
-## React Compiler
+Prerequisites
+- Node.js 16+ or newer
+- npm, yarn, or pnpm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Get started (npm)
+1. Install dependencies
+   npm install
 
-## Expanding the ESLint configuration
+2. Run the development server
+   npm run dev
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+3. Build for production
+   npm run build
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+4. Preview production build locally
+   npm run preview
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+If you prefer yarn:
+- yarn
+- yarn dev
+- yarn build
+- yarn preview
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Project structure (high level)
+- src/ — application source (components, pages, styles, types)
+- public/ — static assets
+- index.html — Vite entry
+- tsconfig.*.json — TypeScript configuration
+- eslint.config.js — ESLint configuration
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+ESLint and formatting
+- Lint:
+  npm run lint
+- Fix lint issues automatically:
+  npm run lint -- --fix
+- If Prettier or other formatters are configured, run their commands as needed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Customizing
+- Update TypeScript or ESLint settings in the corresponding config files.
+- Add persistence (localStorage or API) by editing todo state logic in src.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Testing
+- This starter does not include tests by default. Consider adding a test runner (Vitest, Jest) and writing unit/component tests under src/__tests__.
+
+Contributing
+- Fork the repo, create a branch, and open a pull request.
+- Keep changes small and focused; add or update tests when applicable.
+- Follow the existing TypeScript and linting conventions.
+
+License
+- MIT License
+
+Contact
+- Maintainer: Shahriyar-Rahim
+- File issues or PRs on this repository for bugs, improvements, or questions.
+
+Enjoy building — tell me if you want a README variant with badges, setup for CI, or an expanded development guide.
